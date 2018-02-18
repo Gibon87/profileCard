@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #262626;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.main {
+  height: 400px;
+  width: 250px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 7px rgba(0,0,0,0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+}
+.image img {
+  height: 60%;
+  width: 90%;
+}
+.wave,.wave2 {
+  height: 50px;
+  width: 50px;
+  background: silver;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  z-index: -1;
+}
+@keyframes pulseEffect {
+  from{
+    transform: translate(-50%,-50%) scale(0.5);
+    opacity: 0.4;
+  }
+  to{
+    transform: translate(-50%,-50%) scale(5.5);
+    opacity: 0;
+  }
+}
+.main:hover .wave {
+  -webkit-animation:pulseEffect 2s infinite linear;
+}
+
+@keyframes pulseEffect2 {
+  from{
+    transform: translate(-50%,-50%) scale(0);
+    opacity: 0.6;
+  }
+  to{
+    transform: translate(-50%,-50%) scale(4);
+    opacity: 0;
+  }
+}
+.main:hover .wave2 {
+  -webkit-animation:pulseEffect2 2s infinite linear;
+}
